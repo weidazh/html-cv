@@ -1,0 +1,72 @@
+<html>
+<head>
+<style>
+
+/* @PAGE_WIDTH@mm x @PAGE_HEIGHT@mm */
+/* suppose @MARGIN@ mm margin */
+.A4Portrait {
+    background-color:gray;
+}
+.INNER {
+    background-color:#666666;
+    width:@PAGECONTENT_WIDTH@mm;
+    height:@PAGECONTENT_HEIGHT@mm;
+}
+.ruler {
+    width:@PAGECONTENT_WIDTH@mm;
+}
+@media screen
+  {
+  p.test {font-family:verdana,sans-serif;font-size:5mm;}
+  .A4Portrait { margin-left:auto; margin-right:auto; box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.75); }
+  .A4Portrait {
+      width:@PAGE_WIDTH@mm;
+      height:@PAGE_HEIGHT@mm;
+      margin-top:1em;
+      border:1pt solid;
+  }
+  .INNER { margin:auto auto auto auto; margin-top: @MARGIN@mm; }
+  }
+@media print
+  {
+  p.test {font-family:verdana,sans-serif;font-size:5mm;}
+  body { -webkit-print-color-adjust: exact;}
+  .A4Portrait {
+      width:@PAGECONTENT_WIDTH@mm;
+      height:@PAGECONTENT_HEIGHT@mm;
+      margin: none; margin-top: none; }
+  .A4Portrait { page-break-inside: avoid; }
+  .INNER { margin: auto auto auto auto; ; }
+  @page { margin: @MARGIN@mm; }
+  }
+@media screen,print
+  {
+  p.test {font-weight:bold;}
+  }
+</style>
+</head>
+
+<body>
+<div class="A4Portrait">
+<div class="INNER">
+<p class="test">
+This is a test page. Zoom 100%.
+Showed on screen, it should be verdana, 5mm.
+Showed for print, it should be verdana, 5mm.
+In both cases they are bold.
+</p>
+<hr class="ruler">
+</div>
+</div>
+
+<div class="A4Portrait">
+<div class="INNER">
+<p class="test">
+This is a test page. Zoom 100%.
+Showed on screen, it should be verdana, 5mm.
+Showed for print, it should be verdana, 5mm.
+In both cases they are bold.
+</p>
+<hr class="ruler">
+</div>
+</div>
