@@ -1,0 +1,92 @@
+/* 210mm x 297mm */
+/* suppose 10 mm margin */
+
+@import url(http://fonts.googleapis.com/css?family=Alegreya:700);
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif);
+
+.A4Portrait {
+    /* background-color:gray; */
+}
+.INNER {
+    /* background-color:#666666; */
+    width:190mm;
+    height:277mm;
+}
+.ruler {
+    width:190mm;
+}
+@media screen {
+  p.test {font-family:verdana,sans-serif;font-size:5mm;}
+  .A4Portrait { margin-left:auto; margin-right:auto; box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.75); }
+  .A4Portrait {
+      width:210mm;
+      height:297mm;
+      margin-top:1em;
+  }
+  .INNER { margin-left:10mm; margin-top:10mm; float: left; }
+}
+@media print {
+  p.test {font-family:verdana,sans-serif;font-size:5mm;}
+  body { -webkit-print-color-adjust: exact;}
+  .A4Portrait {
+      width:190mm;
+      height:277mm;
+      margin: none; margin-top: none; }
+  .A4Portrait { page-break-inside: avoid; }
+  .INNER { margin: auto auto auto auto; ; }
+  @page { margin: 10mm; }
+}
+@media screen,print {
+  p.test {font-weight:bold;}
+}
+
+h1 { font-family: 'Alegreya', serif; }
+h2 { font-family: 'Alegreya', serif; }
+
+h1.name { font-size: 28px; }
+h1.addr { font-size: 14px; margin-top: 3px; margin-bottom: 3px; }
+
+
+/* I would use 3 borders to include bizcard-hk to uk then to iso */
+div.bizcard-hk  { width: 90mm; height: 54mm; } /* Hong Kong / China size */
+div.bizcard-uk  { width: 85mm; height: 55mm; } /* UK/ Europe */
+div.bizcard-iso { width: 74mm; height: 52mm; } /* ISO 216 / A8 Sized */
+div.bizcard-us  { width: 88.9mm; height: 50.8mm; } /* Canada / US */
+hr.bizcard-hr { width:78.9mm; border-style: solid; margin-top: -20px; margin-bottom: 18px; }
+
+div.section { float: left; width: 100%; margin-top: 0mm; margin-bottom: 0mm; margin-left:0%; overflow: hidden; }
+.section > h2 { font-size: 18px; margin-top: 5px; margin-bottom: 5px; }
+.section > h2.cont:after { content: " (cont)"; }
+.section > hr { width: 100%; border-style: solid; margin-top: -6px; margin-bottom: 4px; }
+.section > hr { margin-left: -3px; } /* Fix */
+body { font-family: 'Noto Serif', serif; font-size: 14px; }
+.section > ul { margin-top: 3px; margin-bottom: 3px; padding-left: 11em; list-style-type: none; }
+.section > ul > li { margin-bottom: 0.5em; }
+.section > ul > li { list-style-type: none; }
+.section > ul > li .date { margin-right: 0em; display: block; float: left; text-align: right; }
+.section > ul > li .date { border-right: 1px solid black; padding-right: 0.5em; }
+.section > ul { padding-left: 11em; }
+.section > ul > li .date { margin-left: -11em; width: 10em; }
+.section > ul > li .date { border-bottom: 1px solid black; padding-bottom: 2px; }
+.section > ul > li > h3 { font-size: 14px; }
+.section > ul > li > h3 { margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px; }
+
+div.top-margin-54mm-2in { margin-top: 3.2mm; }
+div.float-right { float: right; }
+div.float-left  { float: left; }
+div.clearance {clear: left; }
+div.right-bottom { float: right; margin-top: auto; margin-bottom: 5mm; margin-right: 5mm; }
+div.left-bottom  { float: left;  margin-top: auto; margin-bottom: 5mm; margin-left: 5mm; }
+div.align-right  { text-align: right; }
+
+div.letter-inner { font-family: 'Alegreya', serif; }
+.outline { outline: 2px solid #666666; }
+.hidden { display: none; }
+div.clearnone {clear: none; }
+
+* .DEBUG { outline: 2px solid #000000; }
+* * .DEBUG { outline: 2px solid #333333; }
+* * * .DEBUG { outline: 2px solid #666666; }
+* * * * .DEBUG { outline: 2px solid #999999; }
+* * * * * .DEBUG { outline: 2px solid #cccccc; }
+* * * * * * .DEBUG { outline: 2px solid red; }

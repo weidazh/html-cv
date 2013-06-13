@@ -1,6 +1,5 @@
 # cv.html should not be committed, it contains personal data
 cv.html
-# cv.css is made from cv.css.in
-cv.css
+# cv.css is made from cv.css.in; but do not ignore it in sample branch
 *.*~
 tmp/
