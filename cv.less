@@ -15,14 +15,17 @@
 .A4Portrait {
     /* background-color:gray; */
 }
+
 .INNER {
     /* background-color:#666666; */
     width:@PAGECONTENT_WIDTH;
     height:@PAGECONTENT_HEIGHT;
 }
+
 .ruler {
     width:@PAGECONTENT_WIDTH;
 }
+
 @media screen {
   p.test {font-family:verdana,sans-serif;font-size:5mm;}
   .A4Portrait { margin-left:auto; margin-right:auto; box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.75); }
@@ -33,6 +36,7 @@
   }
   .INNER { margin-left:@MARGIN; margin-top:@MARGIN; float: left; }
 }
+
 @media print {
   p.test {font-family:verdana,sans-serif;font-size:5mm;}
   body { -webkit-print-color-adjust: exact;}
@@ -44,6 +48,7 @@
   .INNER { margin: auto auto auto auto; }
   @page { margin: @MARGIN; }
 }
+
 @media screen,print {
   p.test {font-weight:bold;}
 }
@@ -92,13 +97,28 @@ div.align-right  { text-align: right; }
 
 div.letter-inner { font-family: 'Alegreya', serif; }
 .outline { outline: 2px solid #666666; }
-.hidden { display: none; }
-.hidden-shown { outline: 1px solid red; }
 div.clearnone {clear: none; }
 
-* .DEBUG { outline: 2px solid #000000; }
-* * .DEBUG { outline: 2px solid #333333; }
-* * * .DEBUG { outline: 2px solid #666666; }
-* * * * .DEBUG { outline: 2px solid #999999; }
-* * * * * .DEBUG { outline: 2px solid #cccccc; }
-* * * * * * .DEBUG { outline: 2px solid red; }
+/* .hidden could be change to .hidden-shown in javascript,
+   then they are not only shown, but also outlined;
+   currently use #show-hidden in the URL can show this. */
+.hidden { display: none; }
+.hidden-shown { outline: 1px solid red; }
+
+/* Functions for debugging, please mark
+   an element to be .DEBUG to outline it */
+@debug-color-1: #000000;
+@debug-color-2: #333333;
+@debug-color-3: #666666;
+@debug-color-4: #999999;
+@debug-color-5: #cccccc;
+@debug-color-6: red;
+.debug-func(@color) {
+    outline: 2px solid @color;
+}
+* .DEBUG            { .debug-func(@debug-color-1); }
+* * .DEBUG          { .debug-func(@debug-color-2); }
+* * * .DEBUG        { .debug-func(@debug-color-3); }
+* * * * .DEBUG      { .debug-func(@debug-color-4); }
+* * * * * .DEBUG    { .debug-func(@debug-color-5); }
+* * * * * * .DEBUG  { .debug-func(@debug-color-6); }
