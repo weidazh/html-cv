@@ -1,5 +1,13 @@
-/* @PAGE_WIDTH@mm x @PAGE_HEIGHT@mm */
-/* suppose @MARGIN@ mm margin */
+@mm: ~"";
+@MARGIN: 10mm;
+@PAGE_WIDTH: 210mm;
+@PAGE_HEIGHT: 297mm;
+@TOP_OFFSET: (@PAGE_HEIGHT - @MARGIN);
+@PAGECONTENT_WIDTH: (@PAGE_WIDTH - @MARGIN * 2);
+@PAGECONTENT_HEIGHT: (@PAGE_HEIGHT - @MARGIN * 2);
+
+/* @{PAGE_WIDTH} x @{PAGE_HEIGHT} */
+/* suppose @{MARGIN} margin */
 
 @import url(http://fonts.googleapis.com/css?family=Alegreya:700);
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif:700);
@@ -34,7 +42,7 @@
       height:@PAGECONTENT_HEIGHT@mm;
       margin: none; margin-top: none; }
   .A4Portrait { page-break-inside: avoid; }
-  .INNER { margin: auto auto auto auto; ; }
+  .INNER { margin: auto auto auto auto; }
   @page { margin: @MARGIN@mm; }
 }
 @media screen,print {
