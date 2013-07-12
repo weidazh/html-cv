@@ -36,6 +36,9 @@ function split_section(section, page, new_page) {
 
 function adjust_page() {
 	var i = 0;
+	if (document.location.hash == "#show-hidden") {
+	    $(".hidden").removeClass("hidden").addClass("hidden-shown");
+	}
 	while(true) {
 		console.log(i);
 		var page = $(".A4Portrait").not(".hidden").find(".INNER")[i];
