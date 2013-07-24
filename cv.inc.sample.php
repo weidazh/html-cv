@@ -32,7 +32,7 @@ $info3 = "+852-9876 5432";
 $info4 = "david.ctm@eee.hku.hk";
 ?>
 <?  function content() { ?>
-	<div class="section">
+	<section>
 		<h2>Education Background</h2>
 		<hr/>
 		<ul>
@@ -65,8 +65,8 @@ $info4 = "david.ctm@eee.hku.hk";
 			branch people narrow see. Winding its waiting
 			yet parlors married own feeling. </li>
 		</ul>
-	</div>
-	<div class="section">
+	</section>
+	<section>
 		<h2 class="section-title">Work Experiences</h2>
 		<hr/>
 		<ul>
@@ -113,8 +113,8 @@ $info4 = "david.ctm@eee.hku.hk";
 			indulged own way outlived.
 		</li>
 		</ul>
-	</div>
-	<div class="section">
+	</section>
+	<section>
 		<h2 class="section-title">Skills</h2>
 		<hr/>
 		<ul>
@@ -141,8 +141,8 @@ $info4 = "david.ctm@eee.hku.hk";
 			 Word Records keeper.
 		</li>
 		</ul>
-	</div>
-	<div class="section">
+	</section>
+	<section>
 		<h2 class="section-title">Other Experiences</h2>
 		<hr/>
 		<ul>
@@ -224,5 +224,5 @@ $info4 = "david.ctm@eee.hku.hk";
 
 		</li>
 		</ul>
-	</div>
+	</section>
 <? } ?>

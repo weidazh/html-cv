@@ -10,7 +10,7 @@ function create_new_page(_parent) {
 
 // split the section and move the bottom half to the new page
 function split_section(section, page, new_page) {
-	var new_page_section = $('<div class="section"><h2></h2><hr/><ul></ul></div>');
+	var new_page_section = $('<section><h2></h2><hr/><ul></ul></section>');
 	var new_page_ul = $(new_page_section).find("ul");
 	$(new_page_section).find("h2")
 			.text($(section).find("h2").text())
@@ -45,7 +45,7 @@ function adjust_page() {
 		if (!page)
 			break;
 		var new_page = undefined;
-		$(page).find(".section").each(function() {
+		$(page).find("section").each(function() {
 			var section = this;
 			var splitted = false;
 			console.log("Section: " + section);
