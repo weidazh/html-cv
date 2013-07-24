@@ -5,12 +5,62 @@
 @PAGECONTENT_WIDTH: (@PAGE_WIDTH - @MARGIN * 2);
 @PAGECONTENT_HEIGHT: (@PAGE_HEIGHT - @MARGIN * 2);
 
+@small_size: 12px;
+@normal_size: 14px;
+@baseline: 18px;
+@half_baseline: @baseline / 2;
+
 /* @{PAGE_WIDTH} x @{PAGE_HEIGHT} */
 /* suppose @{MARGIN} margin */
 
 @import url(http://fonts.googleapis.com/css?family=Alegreya:700);
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif:700);
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
+@import url(http://fonts.googleapis.com/css?family=Lekton);
+.normal-1 { font-family: 'Lekton'; } /* Typer style */
+
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+.normal-2 { font-family: 'Anaheim'; } /* Typer style */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+.normal-3 { font-family: 'Roboto'; } /* Informal, not good */
+
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+.normal-4 { font-family: 'Inconsolata'; } /* Typer style */
+
+@import url(http://fonts.googleapis.com/css?family=Anonymous+Pro);
+.normal-5 { font-family: 'Anonymous Pro'; } /* Typer style */
+
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+.normal-6 { font-family: 'Dosis'; } /* Not bad if @baseline: 22px; @normal_size: 16px; */
+
+@import url(http://fonts.googleapis.com/css?family=News+Cycle);
+.normal-8 { font-family: 'News Cycle'; } /* Quite good if @baseline: 22px; @normal_size: 16px; */
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+.normal-10 { font-family: 'Ubuntu'; } /* Not bad! */
+
+@import url(http://fonts.googleapis.com/css?family=Carrois+Gothic);
+.normal-17 { font-family: 'Carrois Gothic'; } /* Not bad! */
+
+@import url(http://fonts.googleapis.com/css?family=Imprima);
+.imprima { font-family: 'Imprima'; } /* not bad! although informal */
+
+@normal_size: 14px;
+@baseline: 18px;
+.normal { .imprima; font-weight: 300; }
+.serif  { font-family: 'Noto Serif'; }
+.narrow { font-family: 'Helvetica Neue Narrow'; }
+.alegreya { font-family: "Alegreya"; }
+
+h1 { .alegreya; }
+h2 { .alegreya; }
+h3 { .alegreya; top: 1px; position: relative; }
+
+h1, h2, h3 { line-height: @baseline; }
 
 .A4Portrait {
     /* background-color:gray; */
@@ -53,9 +103,6 @@
   p.test {font-weight:bold;}
 }
 
-h1 { font-family: 'Alegreya', serif; }
-h2 { font-family: 'Alegreya', serif; }
-
 h1.name { font-size: 28px; }
 h1.addr { font-size: 14px; margin-top: 3px; margin-bottom: 3px; }
 
@@ -67,23 +114,35 @@ div.bizcard-iso { width: 74mm; height: 52mm; } /* ISO 216 / A8 Sized */
 div.bizcard-us  { width: 88.9mm; height: 50.8mm; } /* Canada / US */
 hr.bizcard-hr { width:78.9mm; border-style: solid; margin-top: -20px; margin-bottom: 18px; }
 
+body { .normal; font-size: @normal_size; line-height: @baseline; }
+
 section { float: left; width: 100%; margin-top: 0mm; margin-bottom: 0mm; margin-left:0%; overflow: hidden; }
-section > h2 { font-size: 18px; margin-top: 5px; margin-bottom: 5px; }
-section > h2.cont:after { content: " (cont)"; }
-section > hr { width: 100%; border-style: solid; margin-top: -6px; margin-bottom: 4px; }
-section > hr { margin-left: -3px; } /* Fix */
-body { font-family: 'Noto Serif', serif; font-size: 14px; }
-section > ul { margin-top: 3px; margin-bottom: 3px; padding-left: 11em; list-style-type: none; }
-section > ul > li { margin-bottom: 0.5em; }
-section > ul > li { list-style-type: none; }
-section > ul > li .date { margin-right: 0em; display: block; float: left; text-align: right; }
-section > ul > li .date { border-right: 1px solid black; padding-right: 0.5em; }
-section > ul { padding-left: 11em; }
-section > ul > li .date { margin-left: -11em; width: 10em; }
-section > ul > li .date { border-bottom: 1px solid black; padding-bottom: 2px; }
-section > ul > li > h3 { font-size: 14px; }
-section > ul > li > h3 { margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px; }
-section > ul > li > h3 { font-weight: bold; }
+section h2 { margin-top: @baseline; margin-bottom: @baseline; }
+section h2 { font-size: 18px; line-height: 1.5 * @baseline; }
+section h2 { padding-top: 5 / 18 * @baseline; }
+section h2 { border-bottom: 4 / 18 * @baseline solid; }
+section h2.cont:after { content: " (cont)"; }
+section > ul { margin-top: @baseline; margin-bottom: @baseline; }
+section > ul { list-style-type: none; }
+section > ul > li { margin-top: @baseline; }
+
+/* date and venue aside */
+@aside_width: 11em;
+@aside_width_inner: 10em;
+@aside_pading_right: 4px;
+@aside_border: 1px;
+section > ul       { padding-left: 0px; }
+section > ul > li  { padding-left: @aside_width; }
+section li span.date,
+section li aside   { float: left; margin-left: -@aside_width; width: @aside_width_inner; text-align: right; }
+
+/* aside's bottom and right border */
+aside { border: 0px solid black; }
+aside { border-bottom-width: @aside_border; border-right-width: @aside_border; }
+aside { padding-right: @aside_pading_right; }
+
+section h3 { font-size: @normal_size;  }
+section h3 { margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px; }
 
 section > ul > li > ul { padding-left: 8mm; }
 
@@ -95,7 +154,7 @@ div.right-bottom { float: right; margin-top: auto; margin-bottom: 5mm; margin-ri
 div.left-bottom  { float: left;  margin-top: auto; margin-bottom: 5mm; margin-left: 5mm; }
 div.align-right  { text-align: right; }
 
-div.letter-inner { font-family: 'Alegreya', serif; }
+div.letter-inner { .alegreya; }
 .outline { outline: 2px solid #666666; }
 div.clearnone {clear: none; }
 
