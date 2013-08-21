@@ -35,6 +35,7 @@
 <div class="INNER">
 	<div class="bizcard-hk float-left clearnone">
 	<div class="bizcard-us float-right top-margin-54mm-2in">
+	<div class="scissors-container"><i class="icon-cut"></i></div>
 	<div class="right-bottom align-right">
 		<h1 class="name">&nbsp;</h1>
 		<h1 class="addr"><?= $addr1 ?></h2>

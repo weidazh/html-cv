@@ -1,18 +1,30 @@
-@MARGIN: 10mm;
-@PAGE_WIDTH: 210mm;
-@PAGE_HEIGHT: 297mm;
+/* Use pt instead of mm */
+/* assume 72dpi, then 2.83dp mm */
+
+@MARGIN: 28pt;
+@PAGE_WIDTH: 595pt;
+@PAGE_HEIGHT: 841pt;
 @TOP_OFFSET: (@PAGE_HEIGHT - @MARGIN);
 @PAGECONTENT_WIDTH: (@PAGE_WIDTH - @MARGIN * 2);
 @PAGECONTENT_HEIGHT: (@PAGE_HEIGHT - @MARGIN * 2);
 
-@small_size: 12px;
-@normal_size: 14px;
-@baseline: 18px;
+@small_size: 8pt;
+@normal_size: 10pt;
+@big_size: 12pt;
+@baseline: 14pt;
+@gutter: 20pt;
 @half_baseline: @baseline / 2;
+
+@name_size: 20pt;
+@addr_size: @normal_size;
+@section_title_size: @baseline;
+@section_h3_size: 11pt;
+@section_h3_font_offset: .5pt;
 
 /* @{PAGE_WIDTH} x @{PAGE_HEIGHT} */
 /* suppose @{MARGIN} margin */
 
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 @import url(http://fonts.googleapis.com/css?family=Alegreya:700);
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif:700);
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif);
@@ -49,8 +61,6 @@
 @import url(http://fonts.googleapis.com/css?family=Imprima);
 .imprima { font-family: 'Imprima'; } /* not bad! although informal */
 
-@normal_size: 14px;
-@baseline: 18px;
 .normal { .imprima; font-weight: 300; }
 .serif  { font-family: 'Noto Serif'; }
 .narrow { font-family: 'Helvetica Neue Narrow'; }
@@ -58,7 +68,7 @@
 
 h1 { .alegreya; }
 h2 { .alegreya; }
-h3 { .alegreya; top: 1px; position: relative; }
+h3 { .alegreya; }
 
 h1, h2, h3 { line-height: @baseline; }
 
@@ -68,16 +78,16 @@ h1, h2, h3 { line-height: @baseline; }
 
 .INNER {
     /* background-color:#666666; */
-    width:@PAGECONTENT_WIDTH;
+    width: @PAGECONTENT_WIDTH;
     height:@PAGECONTENT_HEIGHT;
 }
 
 .ruler {
-    width:@PAGECONTENT_WIDTH;
+    width: @PAGECONTENT_WIDTH;
 }
 
 @media screen {
-  p.test {font-family:verdana,sans-serif;font-size:5mm;}
+  p.test {font-family:verdana,sans-serif; font-size: 10pt;}
   .A4Portrait { margin-left:auto; margin-right:auto; box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.75); }
   .A4Portrait {
       width:@PAGE_WIDTH;
@@ -88,10 +98,10 @@ h1, h2, h3 { line-height: @baseline; }
 }
 
 @media print {
-  p.test {font-family:verdana,sans-serif;font-size:5mm;}
+  p.test {font-family:verdana,sans-serif; font-size: 5pt;}
   body { -webkit-print-color-adjust: exact;}
   .A4Portrait {
-      width:@PAGECONTENT_WIDTH;
+      width: @PAGECONTENT_WIDTH;
       height:@PAGECONTENT_HEIGHT;
       margin: none; margin-top: none; }
   .A4Portrait { page-break-inside: avoid; }
@@ -103,22 +113,77 @@ h1, h2, h3 { line-height: @baseline; }
   p.test {font-weight:bold;}
 }
 
-h1.name { font-size: 28px; }
-h1.addr { font-size: 14px; margin-top: 3px; margin-bottom: 3px; }
+h1.name { font-size: @name_size; margin-top: @baseline; margin-bottom: @baseline; }
+h1.addr { font-size: @addr_size; margin-top: 0pt; margin-bottom: 0pt; }
 
 
 /* I would use 3 borders to include bizcard-hk to uk then to iso */
-div.bizcard-hk  { width: 90mm; height: 54mm; } /* Hong Kong / China size */
-div.bizcard-uk  { width: 85mm; height: 55mm; } /* UK/ Europe */
-div.bizcard-iso { width: 74mm; height: 52mm; } /* ISO 216 / A8 Sized */
-div.bizcard-us  { width: 88.9mm; height: 50.8mm; } /* Canada / US */
-hr.bizcard-hr { width:78.9mm; border-style: solid; margin-top: -20px; margin-bottom: 18px; }
+@hk_width: 255pt; /* 290mm; */
+@hk_height: 153pt; /* 153pt; */
+div.bizcard-hk  { width: @hk_width; height: @hk_height; } /* Hong Kong / China size */
+@uk_width: 241pt; /* 85mm; */
+@uk_height: 147pt; /* 52mm; */
+div.bizcard-uk  { width: @uk_width; height: @uk_height; } /* UK/ Europe */
+@iso_width: 210pt; /* 74mm */
+@iso_height: 147pt; /* 74mm */
+div.bizcard-iso { width: @iso_width; height: @iso_height; } /* ISO 216 / A8 Sized */
+@us_width: 252pt; /* 88.9mm */
+@us_height: 144pt; /* 50.8mm */
+div.bizcard-us  { width: @us_width; height: @us_height; } /* Canada / US */
+
+@biz_width: @us_width;
+@biz_height: @us_height;
+@biz_margin: 14pt;
+
+@biz_hr_width: @biz_width - 2 * @biz_margin;
+@biz_hr_border: 1pt;
+@biz_hr_offset: 3pt;
+.bizcard-left, .bizcard-us.float-right {
+    text-align: right;
+    line-height: @biz_height;
+    outline: 1pt dashed black;
+}
+.bizcard-right, .bizcard-us.float-left {
+    text-align: left;
+    line-height: @biz_height;
+    outline: 2pt solid #666666;
+}
+hr.bizcard-hr { 
+    width: @biz_hr_width;
+    border-top: @biz_hr_border solid black;
+    border-bottom: none;
+    margin-top: -@baseline + @biz_hr_offset;
+    margin-bottom: @baseline - @biz_hr_border - @biz_hr_offset;
+}
+.left-right-bottom {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: @biz_margin;
+    margin-right: @biz_margin;
+    margin-bottom: @biz_margin;
+}
+div.right-bottom {
+    .left-right-bottom;
+}
+div.left-bottom  {
+    .left-right-bottom;
+}
+div.scissors-container {
+    display: inline-block;
+    position: relative;
+    top: @baseline / 2;
+    left: -@gutter;
+    background: white;
+    line-height: @baseline;
+    font-size: @baseline;
+    vertical-align: bottom;
+}
 
 body { .normal; font-size: @normal_size; line-height: @baseline; }
 
 section { float: left; width: 100%; margin-top: 0mm; margin-bottom: 0mm; margin-left:0%; overflow: hidden; }
 section h2 { margin-top: @baseline; margin-bottom: @baseline; }
-section h2 { font-size: 18px; line-height: 1.5 * @baseline; }
+section h2 { font-size: @section_title_size; line-height: 1.5 * @baseline; }
 section h2 { padding-top: 5 / 18 * @baseline; }
 section h2 { border-bottom: 4 / 18 * @baseline solid; }
 section h2.cont:after { content: " (cont)"; }
@@ -129,20 +194,21 @@ section > ul > li { margin-top: @baseline; }
 /* date and venue aside */
 @aside_width: 11em;
 @aside_width_inner: 10em;
-@aside_pading_right: 4px;
-@aside_border: 1px;
-section > ul       { padding-left: 0px; }
+@aside_pading_right: 6pt;
+@aside_border: 1pt;
+section > ul       { padding-left: 0pt; }
 section > ul > li  { padding-left: @aside_width; }
 section li span.date,
 section li aside   { float: left; margin-left: -@aside_width; width: @aside_width_inner; text-align: right; }
 
 /* aside's bottom and right border */
-aside { border: 0px solid black; }
+aside { border: 0pt solid black; }
 aside { border-bottom-width: @aside_border; border-right-width: @aside_border; }
 aside { padding-right: @aside_pading_right; }
 
-section h3 { font-size: @normal_size;  }
-section h3 { margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px; }
+section h3 { position: relative; top: @section_h3_font_offset; }
+section h3 { font-size: @section_h3_size;  }
+section h3 { margin-top: 0pt; margin-bottom: 0pt; padding-bottom: 0pt; }
 
 section > ul > li > ul { padding-left: 8mm; }
 
@@ -150,19 +216,17 @@ div.top-margin-54mm-2in { margin-top: 3.2mm; }
 div.float-right { float: right; }
 div.float-left  { float: left; }
 div.clearance {clear: left; }
-div.right-bottom { float: right; margin-top: auto; margin-bottom: 5mm; margin-right: 5mm; }
-div.left-bottom  { float: left;  margin-top: auto; margin-bottom: 5mm; margin-left: 5mm; }
 div.align-right  { text-align: right; }
 
 div.letter-inner { .alegreya; }
-.outline { outline: 2px solid #666666; }
+.outline { } /* should remove this */
 div.clearnone {clear: none; }
 
 /* .hidden could be change to .hidden-shown in javascript,
    then they are not only shown, but also outlined;
    currently use #show-hidden in the URL can show this. */
 .hidden { display: none; }
-.hidden-shown { outline: 1px solid red; }
+.hidden-shown { outline: 1pt solid red; }
 
 /* Functions for debugging, please mark
    an element to be .DEBUG to outline it */
@@ -173,7 +237,7 @@ div.clearnone {clear: none; }
 @debug-color-5: #cccccc;
 @debug-color-6: red;
 .debug-func(@color) {
-    outline: 2px solid @color;
+    outline: 3pt solid @color;
 }
 * .DEBUG            { .debug-func(@debug-color-1); }
 * * .DEBUG          { .debug-func(@debug-color-2); }
