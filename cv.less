@@ -17,9 +17,15 @@
 
 @name_size: 20pt;
 @addr_size: @normal_size;
+
+@section_title_padding_top: 5pt;
 @section_title_size: @baseline;
+@section_title_line_height: 1.5 * @baseline;
+@section_title_border_bottom: 2pt;
+
 @section_h3_size: 11pt;
 @section_h3_font_offset: 0pt;
+
 
 /* @{PAGE_WIDTH} x @{PAGE_HEIGHT} */
 /* suppose @{MARGIN} margin */
@@ -183,16 +189,16 @@ body { .normal; font-size: @normal_size; line-height: @baseline; }
 
 section { float: left; width: 100%; margin-top: 0mm; margin-bottom: 0mm; margin-left:0%; overflow: hidden; }
 section h2 { margin-top: @baseline; margin-bottom: @baseline; }
-section h2 { font-size: @section_title_size; line-height: 1.5 * @baseline; }
-section h2 { padding-top: 5 / 18 * @baseline; }
-section h2 { border-bottom: 4 / 18 * @baseline solid; }
+section h2 { font-size: @section_title_size; line-height: @section_title_line_height; }
+section h2 { padding-top: @section_title_padding_top; }
+section h2 { border-bottom: @section_title_border_bottom solid; }
 section h2.cont:after { content: " (cont)"; }
 section > ul { margin-top: @baseline; margin-bottom: @baseline; }
 section > ul { list-style-type: none; }
 section > ul > li { margin-top: @baseline; }
 
 /* date and venue aside */
-@aside_width: 11em;
+@aside_width: 11.5em;
 @aside_width_inner: 10em;
 @aside_pading_right: 6pt;
 @aside_border: 1pt;
