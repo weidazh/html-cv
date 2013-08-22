@@ -19,7 +19,7 @@
 @addr_size: @normal_size;
 @section_title_size: @baseline;
 @section_h3_size: 11pt;
-@section_h3_font_offset: .5pt;
+@section_h3_font_offset: 0pt;
 
 /* @{PAGE_WIDTH} x @{PAGE_HEIGHT} */
 /* suppose @{MARGIN} margin */
@@ -88,7 +88,7 @@ h1, h2, h3 { line-height: @baseline; }
 
 @media screen {
   p.test {font-family:verdana,sans-serif; font-size: 10pt;}
-  .A4Portrait { margin-left:auto; margin-right:auto; box-shadow: 0px 0px 30px rgba(50, 50, 50, 0.75); }
+  .A4Portrait { margin-left:auto; margin-right:auto; box-shadow: 0pt 0pt 30pt rgba(50, 50, 50, 0.75); }
   .A4Portrait {
       width:@PAGE_WIDTH;
       height:@PAGE_HEIGHT;
@@ -141,12 +141,12 @@ div.bizcard-us  { width: @us_width; height: @us_height; } /* Canada / US */
 .bizcard-left, .bizcard-us.float-right {
     text-align: right;
     line-height: @biz_height;
-    outline: 1pt dashed black;
+    /* outline: 2pt solid #666666; */
 }
 .bizcard-right, .bizcard-us.float-left {
     text-align: left;
     line-height: @biz_height;
-    outline: 2pt solid #666666;
+    /* outline: 1pt dashed black; */
 }
 hr.bizcard-hr { 
     width: @biz_hr_width;
@@ -169,10 +169,10 @@ div.left-bottom  {
     .left-right-bottom;
 }
 div.scissors-container {
-    display: inline-block;
+    display: none;
     position: relative;
     top: @baseline / 2;
-    left: -@gutter;
+    left: @gutter;
     background: white;
     line-height: @baseline;
     font-size: @baseline;
@@ -205,6 +205,8 @@ section li aside   { float: left; margin-left: -@aside_width; width: @aside_widt
 aside { border: 0pt solid black; }
 aside { border-bottom-width: @aside_border; border-right-width: @aside_border; }
 aside { padding-right: @aside_pading_right; }
+
+date, venue { display: block; }
 
 section h3 { position: relative; top: @section_h3_font_offset; }
 section h3 { font-size: @section_h3_size;  }

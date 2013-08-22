@@ -35,20 +35,7 @@
 <div class="INNER">
 	<div class="bizcard-hk float-left clearnone">
 	<div class="bizcard-us float-right top-margin-54mm-2in">
-	<div class="scissors-container"><i class="icon-cut"></i></div>
 	<div class="right-bottom align-right">
-		<h1 class="name">&nbsp;</h1>
-		<h1 class="addr"><?= $addr1 ?></h2>
-		<h1 class="addr"><?= $addr2 ?></h2>
-		<h1 class="addr"><?= $addr3 ?></h2>
-		<h1 class="addr"><?= $addr4 ?></h2>
-	</div>
-	</div>
-	</div>
-
-	<div class="bizcard-hk float-right clearnone">
-	<div class="outline bizcard-us float-left top-margin-54mm-2in">
-	<div class="left-bottom">
 		<h1 class="name"><?= $name ?></h1>
 		<hr class="bizcard-hr" />
 		<h1 class="addr"><?= $info1 ?></h2>
@@ -56,6 +43,19 @@
 		<h1 class="addr"><?= $info3 ?></h2>
 		<h1 class="addr"><?= $info4 ?></h2>
 	</div>
+	</div>
+	</div>
+
+	<div class="bizcard-hk float-right clearnone">
+	<div class="outline bizcard-us float-left top-margin-54mm-2in">
+	<div class="left-bottom">
+		<h1 class="name">&nbsp;</h1>
+		<h1 class="addr"><?= $addr1 ?></h2>
+		<h1 class="addr"><?= $addr2 ?></h2>
+		<h1 class="addr"><?= $addr3 ?></h2>
+		<h1 class="addr"><?= $addr4 ?></h2>
+	</div>
+	<div class="scissors-container"><i class="icon-cut"></i></div>
 	</div>
 	</div>
 
