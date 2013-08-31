@@ -26,5 +26,5 @@ Edit your own CV referring to the sample. Visit your own CV HTML.
 
 Official source in github: [https://github.com/weidazh/html-cv/](https://github.com/weidazh/html-cv/)
 
-Preview in github: [cv.sample.html](http://htmlpreview.github.io/?https://github.com/weidazh/html-cv/blob/sample/cv.sample.html)
+Preview in github: [cv.sample.html](http://htmlpreview.github.io/?https://github.com/weidazh/html-cv/master/cv.sample.html)
 
