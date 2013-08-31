@@ -1,0 +1,390 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+@import url(http://fonts.googleapis.com/css?family=Alegreya:700);
+
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif:700);
+
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif);
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
+@import url(http://fonts.googleapis.com/css?family=Lekton);
+
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+@import url(http://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+
+@import url(http://fonts.googleapis.com/css?family=News+Cycle);
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+@import url(http://fonts.googleapis.com/css?family=Carrois+Gothic);
+
+@import url(http://fonts.googleapis.com/css?family=Imprima);
+/* Use pt instead of mm */
+/* assume 72dpi, then 2.83dp mm */
+/* @{PAGE_WIDTH} x @{PAGE_HEIGHT} */
+/* suppose @{MARGIN} margin */
+.normal-1 {
+  font-family: 'Lekton';
+}
+/* Typer style */
+.normal-2 {
+  font-family: 'Anaheim';
+}
+/* Typer style */
+.normal-3 {
+  font-family: 'Roboto';
+}
+/* Informal, not good */
+.normal-4 {
+  font-family: 'Inconsolata';
+}
+/* Typer style */
+.normal-5 {
+  font-family: 'Anonymous Pro';
+}
+/* Typer style */
+.normal-6 {
+  font-family: 'Dosis';
+}
+/* Not bad if @baseline: 22px; @normal_size: 16px; */
+.normal-8 {
+  font-family: 'News Cycle';
+}
+/* Quite good if @baseline: 22px; @normal_size: 16px; */
+.normal-10 {
+  font-family: 'Ubuntu';
+}
+/* Not bad! */
+.normal-17 {
+  font-family: 'Carrois Gothic';
+}
+/* Not bad! */
+.imprima {
+  font-family: 'Imprima';
+}
+/* not bad! although informal */
+.normal {
+  font-family: 'Imprima';
+  font-weight: 300;
+}
+.serif {
+  font-family: 'Noto Serif';
+}
+.narrow {
+  font-family: 'Helvetica Neue Narrow';
+}
+.alegreya {
+  font-family: "Alegreya";
+}
+h1 {
+  font-family: "Alegreya";
+}
+h2 {
+  font-family: "Alegreya";
+}
+h3 {
+  font-family: "Alegreya";
+}
+h1, h2, h3 {
+  line-height: 14pt;
+}
+.A4Portrait {
+  /* background-color:gray; */
+
+}
+.INNER {
+  /* background-color:#666666; */
+
+  width: 539pt;
+  height: 785pt;
+}
+.ruler {
+  width: 539pt;
+}
+@media screen {
+  p.test {
+    font-family: verdana, sans-serif;
+    font-size: 10pt;
+  }
+  .A4Portrait {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0pt 0pt 30pt rgba(50, 50, 50, 0.75);
+  }
+  .A4Portrait {
+    width: 595pt;
+    height: 841pt;
+    margin-top: 1em;
+  }
+  .INNER {
+    margin-left: 28pt;
+    margin-top: 28pt;
+    float: left;
+  }
+}
+@media print {
+  p.test {
+    font-family: verdana, sans-serif;
+    font-size: 5pt;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+  .A4Portrait {
+    width: 539pt;
+    height: 785pt;
+    margin: none;
+    margin-top: none;
+  }
+  .A4Portrait {
+    page-break-inside: avoid;
+  }
+  .INNER {
+    margin: auto auto auto auto;
+  }
+  @page  {
+    margin: 28pt;
+  }
+}
+@media screen, print {
+  p.test {
+    font-weight: bold;
+  }
+}
+h1.name {
+  font-size: 20pt;
+  margin-top: 14pt;
+  margin-bottom: 14pt;
+}
+h1.addr {
+  font-size: 10pt;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+/* I would use 3 borders to include bizcard-hk to uk then to iso */
+/* 290mm; */
+/* 153pt; */
+div.bizcard-hk {
+  width: 255pt;
+  height: 153pt;
+}
+/* Hong Kong / China size */
+/* 85mm; */
+/* 52mm; */
+div.bizcard-uk {
+  width: 241pt;
+  height: 147pt;
+}
+/* UK/ Europe */
+/* 74mm */
+/* 74mm */
+div.bizcard-iso {
+  width: 210pt;
+  height: 147pt;
+}
+/* ISO 216 / A8 Sized */
+/* 88.9mm */
+/* 50.8mm */
+div.bizcard-us {
+  width: 252pt;
+  height: 144pt;
+}
+/* Canada / US */
+.bizcard-left, .bizcard-us.float-right {
+  text-align: right;
+  line-height: 144pt;
+  /* outline: 2pt solid #666666; */
+
+}
+.bizcard-right, .bizcard-us.float-left {
+  text-align: left;
+  line-height: 144pt;
+  /* outline: 1pt dashed black; */
+
+}
+hr.bizcard-hr {
+  width: 224pt;
+  border-top: 1pt solid #000000;
+  border-bottom: none;
+  margin-top: -11pt;
+  margin-bottom: 10pt;
+}
+.left-right-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 14pt;
+  margin-right: 14pt;
+  margin-bottom: 14pt;
+}
+div.right-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 14pt;
+  margin-right: 14pt;
+  margin-bottom: 14pt;
+}
+div.left-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 14pt;
+  margin-right: 14pt;
+  margin-bottom: 14pt;
+}
+div.scissors-container {
+  display: none;
+  position: relative;
+  top: 7pt;
+  left: 20pt;
+  background: white;
+  line-height: 14pt;
+  font-size: 14pt;
+  vertical-align: bottom;
+}
+body {
+  font-family: 'Imprima';
+  font-weight: 300;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+section {
+  float: left;
+  width: 100%;
+  margin-top: 0mm;
+  margin-bottom: 0mm;
+  margin-left: 0%;
+  overflow: hidden;
+}
+section h2 {
+  margin-top: 14pt;
+  margin-bottom: 14pt;
+}
+section h2 {
+  font-size: 14pt;
+  line-height: 21pt;
+}
+section h2 {
+  padding-top: 5pt;
+}
+section h2 {
+  border-bottom: 2pt solid;
+}
+section h2.cont:after {
+  content: " (cont)";
+}
+section > ul {
+  margin-top: 14pt;
+  margin-bottom: 14pt;
+}
+section > ul {
+  list-style-type: none;
+}
+section > ul > li {
+  margin-top: 14pt;
+}
+/* date and venue aside */
+section > ul {
+  padding-left: 0pt;
+}
+section > ul > li {
+  padding-left: 11.5em;
+}
+section li span.date, section li aside {
+  float: left;
+  margin-left: -11.5em;
+  width: 10em;
+  text-align: right;
+}
+/* aside's bottom and right border */
+aside {
+  border: 0pt solid black;
+}
+aside {
+  border-bottom-width: 1pt;
+  border-right-width: 1pt;
+}
+aside {
+  padding-right: 6pt;
+}
+date, venue {
+  display: block;
+}
+section h3 {
+  position: relative;
+  top: 0pt;
+}
+section h3 {
+  font-size: 11pt;
+}
+section h3 {
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+  padding-bottom: 0pt;
+}
+section > ul > li > ul {
+  padding-left: 8mm;
+}
+div.top-margin-54mm-2in {
+  margin-top: 3.2mm;
+}
+div.float-right {
+  float: right;
+}
+div.float-left {
+  float: left;
+}
+div.clearance {
+  clear: left;
+}
+div.align-right {
+  text-align: right;
+}
+div.letter-inner {
+  font-family: "Alegreya";
+}
+/* should remove this */
+div.clearnone {
+  clear: none;
+}
+/* .hidden could be change to .hidden-shown in javascript,
+   then they are not only shown, but also outlined;
+   currently use #show-hidden in the URL can show this. */
+.hidden {
+  display: none;
+}
+.hidden-shown {
+  outline: 1pt solid red;
+}
+/* Functions for debugging, please mark
+   an element to be .DEBUG to outline it */
+* .DEBUG {
+  outline: 3pt solid #000000;
+}
+* * .DEBUG {
+  outline: 3pt solid #333333;
+}
+* * * .DEBUG {
+  outline: 3pt solid #666666;
+}
+* * * * .DEBUG {
+  outline: 3pt solid #999999;
+}
+* * * * * .DEBUG {
+  outline: 3pt solid #cccccc;
+}
+* * * * * * .DEBUG {
+  outline: 3pt solid #ff0000;
+}
+a:hover, a:visited, a:link {
+  text-decoration: underscore;
+  color: inherit;
+}

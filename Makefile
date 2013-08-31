@@ -1,7 +1,7 @@
-ALL: tmp/test.html cv.css
+ALL: cv.less.css cv.sample.html
 
-%.css: %.css.in
-	sh A4.sh < $< > $@
+%.less.css: %.less
+	lessc $< $@
 
-tmp/test.html: A4.html.in
-	sh A4.sh < $< > $@
+cv.sample.html: cv.inc.sample.php cv.php markdown.inc.php
+	php cv.php $< > $@

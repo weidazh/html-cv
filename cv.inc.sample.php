@@ -1,71 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-<!-- http mode only
-<link rel="stylesheet/less" type="text/css" href="cv.less" />
-<script src="less-1.4.1.min.js" type="text/javascript"></script>
--->
+<? include "markdown.inc.php"; ?>
+<?  function cover_letter () {
+    return markdown(<<<EOF
+Dear Sir/Madam,
 
-<!-- file mode or http mode-->
-<link rel="stylesheet" type="text/css" href="cv.less.css" />
+Re : Application for the Post of Clerical Officer II
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="break-page.js"></script>
-</head>
+I refer to the advertisement posted by your company in the South China Morning Post (2 March 2003) regarding the captioned position and I would like to apply for it.
 
-<body onload="adjust_page()">
+A Form Five graduate from St.John's College, I have also attended several computer courses at Hong Kong Computer School in 2000 and 2002. For two months during my Form Three summer vacation I worked as a clerk at Johnny Shipping Company, where i was able to obtain hands-on experience in filing, handling document and data input.
 
-<div class="A4Portrait hidden">
-<div class="INNER">
-	<div class="letter-inner">
-	<p>Dear Sir/Madam,</p>
+Apart from the summer job experience, I was the chairman of our school's Chinese Club, from where I acquired my leadership skills. As communication is regarded as the most integral part in any profession, I also participated in a number of communication skills workshops organized by the Career Unit of our school. With the above stated job experience and training, I am confident that I can bring to the position the best I can offer.
 
-<p>Re : Application for the Post of Clerical Officer II</p>
+Enclosed please find my resume and I will be grateful if an interview will be granted at a time convenient to you.
 
-<p>I refer to the advertisement posted by your company in the South China Morning Post (2 March 2003) regarding the captioned position and I would like to apply for it.</p>
+Yours faithfully
 
-<p>A Form Five graduate from St.John's College, I have also attended several computer courses at Hong Kong Computer School in 2000 and 2002. For two months during my Form Three summer vacation I worked as a clerk at Johnny Shipping Company, where i was able to obtain hands-on experience in filing, handling document and data input.</p>
+Chan Tai Man
+EOF
+    );
+} ?>
+<?
+$addr1 = "Flat A, 12th Floor";
+$addr2 = "Kowloon Government Offices";
+$addr3 = "405 Nathan Road";
+$addr4 = "YAU MA TEI, KOWLOON";
 
-<p>Apart from the summer job experience, I was the chairman of our school's Chinese Club, from where I acquired my leadership skills. As communication is regarded as the most integral part in any profession, I also participated in a number of communication skills workshops organized by the Career Unit of our school. With the above stated job experience and training, I am confident that I can bring to the position the best I can offer.</p>
-
-<p>Enclosed please find my resume and I will be grateful if an interview will be granted at a time convenient to you.</p>
-
-<p>Yours faithfully</p>
-
-<p>Chan Tai Man</p>
-	</div>
-</div>
-</div>
-
-<div class="A4Portrait">
-<div class="INNER">
-	<div class="bizcard-hk float-left clearnone">
-	<div class="bizcard-us float-right top-margin-54mm-2in">
-	<div class="right-bottom align-right">
-		<h1 class="name">Chan Tai Man, David</h1>
-		<hr class="bizcard-hr" />
-		<h1 class="addr">Undergraduate Student</h2>
-		<h1 class="addr">The University of Hong Kong</h2>
-		<h1 class="addr">+852-9876 5432</h2>
-		<h1 class="addr">david.ctm@eee.hku.hk</h2>
-	</div>
-	</div>
-	</div>
-
-	<div class="bizcard-hk float-right clearnone">
-	<div class="outline bizcard-us float-left top-margin-54mm-2in">
-	<div class="left-bottom">
-		<h1 class="name">&nbsp;</h1>
-		<h1 class="addr">Flat A, 12th Floor</h2>
-		<h1 class="addr">Kowloon Government Offices</h2>
-		<h1 class="addr">405 Nathan Road</h2>
-		<h1 class="addr">YAU MA TEI, KOWLOON</h2>
-	</div>
-	<div class="scissors-container"><i class="icon-cut"></i></div>
-	</div>
-	</div>
-
-	<section>
+$name = "Chan Tai Man, David";
+$info1 = "Undergraduate Student";
+$info2 = "The University of Hong Kong";
+$info3 = "+852-9876 5432";
+$info4 = "david.ctm@eee.hku.hk";
+?>
+<?  function _content() { ?>
+<section>
 <h2>Education Background</h2>
 <ul>
 <li>    <aside>
@@ -257,8 +224,8 @@
 
 </ul>
 </section>
-</div>
-</div>
-</body>
-</html>
-
+<? } ?>
+<? function content() {
+    // return indent(_content());
+    return _content();
+} ?>
