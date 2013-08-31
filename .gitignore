@@ -1,11 +1,9 @@
 # cv.html should not be committed, it contains personal data
 # now cv*.html is generated from cv.php and others
 cv.html
-cv.sample.html
 # cv.css is made from cv.css.in
 cv.css
 *.*~
 tmp/
-cv.less.css
 # cv.inc.php should not be committed, it contains personal data
 cv.inc.php
