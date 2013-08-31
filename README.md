@@ -18,12 +18,11 @@ Tested platform:
 Get Started
 -----------
 
-You need `sh` and `make` to run the `Makefile` and `A4.sh` to initialize the CSS. However,
-you can also download the cv.css in the sample branch.
+You need `php` (cli) and `make` to run the `Makefile` and `lessc` to compile the LESS to CSS. However,
+you can also download the cv.less.css or cv.sample.html in the sample branch.
 
 After make. Please visit cv.sample.html in the source.
 Edit your own CV referring to the sample. Visit your own CV HTML.
-
 
 Official source in github: [https://github.com/weidazh/html-cv/](https://github.com/weidazh/html-cv/)
 
