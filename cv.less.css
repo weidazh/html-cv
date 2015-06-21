@@ -1,33 +1,18 @@
 @import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
 @import url(http://fonts.googleapis.com/css?family=Alegreya:700);
-
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif:700);
-
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif);
-
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
-
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
-
 @import url(http://fonts.googleapis.com/css?family=Lekton);
-
 @import url(http://fonts.googleapis.com/css?family=Anaheim);
-
 @import url(http://fonts.googleapis.com/css?family=Roboto);
-
 @import url(http://fonts.googleapis.com/css?family=Inconsolata);
-
 @import url(http://fonts.googleapis.com/css?family=Anonymous+Pro);
-
 @import url(http://fonts.googleapis.com/css?family=Dosis);
-
 @import url(http://fonts.googleapis.com/css?family=News+Cycle);
-
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
-
 @import url(http://fonts.googleapis.com/css?family=Carrois+Gothic);
-
 @import url(http://fonts.googleapis.com/css?family=Imprima);
 /* Use pt instead of mm */
 /* assume 72dpi, then 2.83dp mm */
@@ -84,27 +69,27 @@
   font-family: 'Helvetica Neue Narrow';
 }
 .alegreya {
-  font-family: "Alegreya";
+  font-family: "Alegreya", 'Hiragino Sans GB';
 }
 h1 {
-  font-family: "Alegreya";
+  font-family: "Alegreya", 'Hiragino Sans GB';
 }
 h2 {
-  font-family: "Alegreya";
+  font-family: "Alegreya", 'Hiragino Sans GB';
 }
 h3 {
-  font-family: "Alegreya";
+  font-family: "Alegreya", 'Hiragino Sans GB';
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 14pt;
 }
 .A4Portrait {
   /* background-color:gray; */
-
 }
 .INNER {
   /* background-color:#666666; */
-
   width: 539pt;
   height: 785pt;
 }
@@ -152,7 +137,7 @@ h1, h2, h3 {
   .INNER {
     margin: auto auto auto auto;
   }
-  @page  {
+  @page {
     margin: 28pt;
   }
 }
@@ -200,17 +185,17 @@ div.bizcard-us {
   height: 144pt;
 }
 /* Canada / US */
-.bizcard-left, .bizcard-us.float-right {
+.bizcard-left,
+.bizcard-us.float-right {
   text-align: right;
   line-height: 144pt;
   /* outline: 2pt solid #666666; */
-
 }
-.bizcard-right, .bizcard-us.float-left {
+.bizcard-right,
+.bizcard-us.float-left {
   text-align: left;
   line-height: 144pt;
   /* outline: 1pt dashed black; */
-
 }
 hr.bizcard-hr {
   width: 224pt;
@@ -298,7 +283,8 @@ section > ul {
 section > ul > li {
   padding-left: 11.5em;
 }
-section li span.date, section li aside {
+section li span.date,
+section li aside {
   float: left;
   margin-left: -11.5em;
   width: 10em;
@@ -315,7 +301,8 @@ aside {
 aside {
   padding-right: 6pt;
 }
-date, venue {
+date,
+venue {
   display: block;
 }
 section h3 {
@@ -349,7 +336,7 @@ div.align-right {
   text-align: right;
 }
 div.letter-inner {
-  font-family: "Alegreya";
+  font-family: "Alegreya", 'Hiragino Sans GB';
 }
 /* should remove this */
 div.clearnone {
@@ -384,7 +371,9 @@ div.clearnone {
 * * * * * * .DEBUG {
   outline: 3pt solid #ff0000;
 }
-a:hover, a:visited, a:link {
+a:hover,
+a:visited,
+a:link {
   text-decoration: underscore;
   color: inherit;
 }
